@@ -1,0 +1,4 @@
+for login I have use jwt token.
+For frontend i have use angualar.
+use ng install before running angular project. You need to download all the dependencies. The angular is 
+made with bootstrap for styling.

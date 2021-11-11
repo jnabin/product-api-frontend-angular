@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+           
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList">
+            <th scope="row">{{product.productId}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+            <td>
+              <a [routerLink]="['/detailsProduct', product.productId]">view</a> | 
+              <a [routerLink]="['/deleteProduct', product.productId]">delete</a> | 
+              <a [routerLink]="['/editProduct', product.productId]">edit</a>
+            </td>
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,40 @@
+
+<div class="container">
+    <form [formGroup]="form" class="mt-5" (submit)="registration(form.value)">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+            <span class="text-danger" *ngIf="name.touched && name.invalid">name is required</span>
+        </div>
+        <div class="form-group">
+            <label for="number">Phone Number</label>
+            <input type="text" formControlName="phonenumber" class="form-control" id="number" aria-describedby="emailHelp" placeholder="Enter name">
+            <span class="text-danger" *ngIf="phonenumber.touched && phonenumber.invalid">phonenumber is required</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <span class="text-danger" *ngIf="email.touched && email.invalid">email is required</span>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" formControlName="address" class="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter name">
+            <span class="text-danger" *ngIf="address.touched && address.invalid">address is required</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <span class="text-danger" *ngIf="password.touched && password.invalid">password is required</span>
+        </div>
+        <div class="form-group">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" formControlName="confirmpassword" class="form-control" id="confirmpassword" placeholder="Confirm Password">
+            <span class="text-danger" *ngIf="confirmpassword.touched && confirmpassword.invalid">confirm password is required</span>
+            <span class="text-danger" *ngIf="confirmpassword.valid && form.invalid && form.hasError('passwordShouldMatch')">
+                confirm password should be match
+            </span>
+          </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+    </form>
+   
+</div>
